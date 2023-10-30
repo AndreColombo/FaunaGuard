@@ -1,0 +1,86 @@
+/* ----------------- Nativos ----------------- */
+
+header {
+  background-color: #157146;
+  padding: 0.75%;
+  margin-bottom: 2%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 1.5%;
+}
+
+label {
+  font-weight: 500;
+}
+
+input[type="text"] {
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 1%;
+}
+
+input[type="email"] {
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 1%;
+}
+
+textarea {
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 1%;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  width: 7.5%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1%;
+}
+
+/* ----------------- Classes ----------------- */
+
+.button {
+  background: #157146;
+  color: white;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.contatos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 5%;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5% 0px;
+}
+
+.blocoLink {
+  display: flex;
+  flex-direction: column;
+}
+
+#linkEmail {
+  padding: 7.5px;
+  width: 275px;
+}
