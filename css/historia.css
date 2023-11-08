@@ -12,6 +12,24 @@ img {
 
 /* ----------------- Classes ----------------- */
 
+.bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links{
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.navbar-link{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
 .historia {
   display: flex;
   justify-content: space-evenly;
