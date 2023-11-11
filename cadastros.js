@@ -28,9 +28,22 @@ const CadastroSchema = new mongoose.Schema({
 
 const Cadastro = mongoose.model("Cadastro", CadastroSchema);
 
+// Criando a model de Email
+const InscricaoSchema = new mongoose.Schema({
+  email: { type: String, required: true },
+});
+
+const Inscricao = mongoose.model("Inscricao", InscricaoSchema);
+
 // Configurando os roteamentos Cadastro
-app.post("/cadastropessoa", async (req, res) => {
+app.post("/cadastrousuario", async (req, res) => {
+  const nome = req.body.nome;
   const email = req.body.email;
+  const endereco = req.body.endereco;
+  const bairro = req.body.bairro;
+  const numero = req.body.numero;
+  const cep = req.body.cep;
+  const uf = req.body.uf;
 
   // Testando se o campo foi preenchido
   if (
@@ -53,7 +66,13 @@ app.post("/cadastropessoa", async (req, res) => {
   }
 
   const cadastro = new Cadastro({
+    nome: nome,
     email: email,
+    endereco: endereco,
+    bairro: bairro,
+    numero: numero,
+    cep: cep,
+    uf: uf,
   });
 
   try {
@@ -67,13 +86,6 @@ app.post("/cadastropessoa", async (req, res) => {
     res.status(400).json({ error });
   }
 });
-
-// Criando a model de Email
-const InscricaoSchema = new mongoose.Schema({
-  email: { type: String, required: true },
-});
-
-const Inscricao = mongoose.model("Inscricao", InscricaoSchema);
 
 // Configurando os roteamentos Email
 app.post("/cadastroemail", async (req, res) => {
@@ -108,11 +120,11 @@ app.post("/cadastroemail", async (req, res) => {
 });
 
 // Rota para o get de cadastro
-app.get("/cadastroemail", async (req, res) => {
+app.get("/cadastrousuario", async (req, res) => {
   res.sendFile(__dirname + "pages/home.html");
 });
 
-// Tota raiz
+// Rota raiz
 app.get("/", async (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
