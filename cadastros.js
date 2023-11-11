@@ -23,7 +23,7 @@ const CadastroSchema = new mongoose.Schema({
   bairro: { type: String, required: true },
   numero: { type: Number, required: true },
   cep: { type: String, required: true },
-  uf: { type: Selection, required: true },
+  uf: { type: String, required: true },
 });
 
 const Cadastro = mongoose.model("Cadastro", CadastroSchema);
