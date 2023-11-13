@@ -11,8 +11,7 @@ const port = 3000;
 
 // Configurando o acesso ao mongodb
 mongoose.connect("mongodb://127.0.0.1:27017/FaunaGuard", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 20000,
 });
 
 // Criando a model de Cadastro
@@ -120,7 +119,7 @@ app.post("/cadastroemail", async (req, res) => {
 });
 
 // Rota para o get de cadastro
-app.get("/cadastrousuario", async (req, res) => {
+app.get("/cadastroemail", async (req, res) => {
   res.sendFile(__dirname + "pages/home.html");
 });
 
