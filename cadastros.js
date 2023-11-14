@@ -87,7 +87,7 @@ app.post("/cadastrousuario", async (req, res) => {
 });
 
 // Configurando os roteamentos Email
-app.post("/cadastroemail", async (req, res) => {
+app.post("/cadastroinscricao", async (req, res) => {
   const email = req.body.email;
 
   // Testando se o campo foi preenchido
@@ -119,8 +119,8 @@ app.post("/cadastroemail", async (req, res) => {
 });
 
 // Rota para o get de cadastro
-app.get("/cadastroemail", async (req, res) => {
-  res.sendFile(__dirname + "pages/home.html");
+app.get("/cadastroinscricao", async (req, res) => {
+  res.sendFile(__dirname + "home.html");
 });
 
 // Rota raiz
