@@ -151,17 +151,17 @@ app.post("/cadastroCadastro", async (req, res) => {
   }
 });
 
-// Rota para o get de cadastro
+// Rota para o get de Inscrição
 app.get("/cadastroInscricao", async (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-// Rota para o get de cadastro
+// Rota para o get de Contato
 app.get("/cadastroContato", async (req, res) => {
   res.sendFile(__dirname + "/pages/contatos.html");
 });
 
-// Rota para o get de cadastro
+// Rota para o get de Cadastro
 app.get("/cadastroCadastro", async (req, res) => {
   res.sendFile(__dirname + "/pages/cadastro.html");
 });
