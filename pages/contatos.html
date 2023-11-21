@@ -59,7 +59,7 @@
 
     <main>
       <div class="container">
-        <form action="/cadastroContato" method="post">
+        <form>
           <h2>Entre em Contato</h2>
 
           <label>Nome:</label>
@@ -92,17 +92,18 @@
         <p>Avenida da Esperança, 456</p>
       </div>
 
+      <hr />
       <!-- ----------------- Links ----------------- -->
 
       <div class="links">
         <div class="blocoLink">
           <h2>Sobre Nós</h2>
-          <a href="pages/historia.html">Nossa história</a>
-          <a href="pages/time.html">Nosso time</a>
+          <a href="historia.html">Nossa história</a>
+          <a href="time.html">Nosso time</a>
         </div>
         <div class="blocoLink">
           <h2>Empresa</h2>
-          <a href="pages/contatos.html">Contatos</a>
+          <a href="contatos.html">Contatos</a>
         </div>
         <div class="blocoLink">
           <h2>Parcerias</h2>
@@ -113,12 +114,13 @@
         </div>
         <div class="blocoLink">
           <h2>Inscreva-se</h2>
-          <form class="linkForm" action="/cadastroInscricao" method="post">
+          <form class="linkForm">
             <input
               type="email"
               placeholder="Insira um E-mail"
               id="linkEmail"
               name="email"
+              required
             />
             <input type="submit" class="button" value="Inscrever" />
           </form>

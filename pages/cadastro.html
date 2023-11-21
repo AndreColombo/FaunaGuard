@@ -58,9 +58,10 @@
     <main>
       <!-- ---------------------------------- Formulário ---------------------------------- -->
 
+      <img src="../images/Dog06.png" style="height: 100%" />
       <div class="container-forms">
         <h2>Formulário de Cadastro</h2>
-        <form action="/cadastroUsuario" method="post">
+        <form>
           <div class="form-group">
             <label for="nome">Nome Completo:</label>
             <input type="text" id="nome" name="nome" required />
@@ -145,7 +146,55 @@
           </div>
         </form>
       </div>
-      <img src="../images/Dog06.png" alt="" />
     </main>
+
+    <!-- ---------------------------------- Footer ---------------------------------- -->
+
+    <footer class="container">
+      <!-- ----------------- Contatos ----------------- -->
+
+      <div class="contatos">
+        <p>(+55) 11 98765-4321</p>
+        <p>contato@faunaguard.org</p>
+        <p>Avenida da Esperança, 456</p>
+      </div>
+
+      <hr />
+      <!-- ----------------- Links ----------------- -->
+
+      <div class="links">
+        <div class="blocoLink">
+          <h2>Sobre Nós</h2>
+          <a href="./pages/historia.html">Nossa história</a>
+          <a href="./pages/time.html">Nosso time</a>
+        </div>
+        <div class="blocoLink">
+          <h2>Empresa</h2>
+          <a href="./pages/contatos.html">Contatos</a>
+        </div>
+        <div class="blocoLink">
+          <h2>Parcerias</h2>
+          <a href="https://google.com">Google</a>
+          <a href="https://music.youtube.com/watch?v=hQ_Z-10dXSE&feature=share"
+            >Ozzy Osbourne</a
+          >
+        </div>
+        <div class="blocoLink">
+          <h2>Inscreva-se</h2>
+          <form class="linkForm">
+            <input
+              type="email"
+              placeholder="Insira um E-mail"
+              id="linkEmail"
+              name="email"
+              required
+            />
+            <input type="submit" class="button" value="Inscrever" />
+          </form>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------- -->
+    </footer>
   </body>
 </html>
