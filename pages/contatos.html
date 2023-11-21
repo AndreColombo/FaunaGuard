@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fauna Guard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="../icons/FaunaGuard.png" />
+    <link rel="stylesheet" href="../css/contatos.css" />
+  </head>
+  <body>
+    <!-- ---------------------------------- Libras ---------------------------------- -->
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+
+    <!-- ---------------------------------- Logo ---------------------------------- -->
+
+    <header>
+      <div class="container bar">
+        <a href="/">
+          <img
+            src="../images/FaunaGuard.png"
+            alt="Logo Fauna Guard"
+            width="60%"
+          />
+        </a>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="navbar-links">
+          <a href="historia.html" class="navbar-link">Nossa História</a>
+          <a href="time.html" class="navbar-link">Nosso Time</a>
+          <a href="contatos.html" class="navbar-link">Contatos</a>
+        </div>
+        <a href="cadastro.html" class="navbar-link">Cadastrar</a>
+      </div>
+    </header>
+
+    <!-- ---------------------------------- Formulário ---------------------------------- -->
+
+    <main>
+      <div class="container">
+        <form action="/cadastroContato" method="post">
+          <h2>Entre em Contato</h2>
+
+          <label>Nome:</label>
+          <input type="text" placeholder="Digite seu nome" name="nome" />
+
+          <label>Email:</label>
+          <input
+            type="email"
+            placeholder="exemplo@gmail.com"
+            name="email"
+            required
+          />
+
+          <label>Mensagem:</label>
+          <textarea rows="3" name="mensagem" required></textarea>
+
+          <input type="submit" class="submit" value="Enviar" />
+        </form>
+      </div>
+    </main>
+
+    <!-- ---------------------------------- Footer ---------------------------------- -->
+
+    <footer class="container">
+      <!-- ----------------- Contatos ----------------- -->
+
+      <div class="contatos">
+        <p>(+55) 11 98765-4321</p>
+        <p>contato@faunaguard.org</p>
+        <p>Avenida da Esperança, 456</p>
+      </div>
+
+      <!-- ----------------- Links ----------------- -->
+
+      <div class="links">
+        <div class="blocoLink">
+          <h2>Sobre Nós</h2>
+          <a href="pages/historia.html">Nossa história</a>
+          <a href="pages/time.html">Nosso time</a>
+        </div>
+        <div class="blocoLink">
+          <h2>Empresa</h2>
+          <a href="pages/contatos.html">Contatos</a>
+        </div>
+        <div class="blocoLink">
+          <h2>Parcerias</h2>
+          <a href="https://google.com">Google</a>
+          <a href="https://music.youtube.com/watch?v=hQ_Z-10dXSE&feature=share"
+            >Ozzy Osbourne</a
+          >
+        </div>
+        <div class="blocoLink">
+          <h2>Inscreva-se</h2>
+          <form class="linkForm" action="/cadastroInscricao" method="post">
+            <input
+              type="email"
+              placeholder="Insira um E-mail"
+              id="linkEmail"
+              name="email"
+            />
+            <input type="submit" class="button" value="Inscrever" />
+          </form>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------- -->
+    </footer>
+  </body>
+</html>

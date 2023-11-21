@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static("public"));
+
 const port = 3000;
 
 mongoose.connect("mongodb://127.0.0.1:27017/FaunaGuard", {
@@ -17,16 +19,18 @@ mongoose.connect("mongodb://127.0.0.1:27017/FaunaGuard", {
 const inscricaoSchema = new mongoose.Schema({
   email: { type: String, Required: true },
 });
-const Inscrição = mongoose.model("Inscriçõe", inscricaoSchema);
+const Inscricao = mongoose.model("Inscriçõe", inscricaoSchema);
 
 // Model Contato
 const contatoSchema = new mongoose.Schema({
+  nome: { type: String },
   email: { type: String, Required: true },
+  mensagem: { type: String },
 });
 const Contato = mongoose.model("Contato", contatoSchema);
 
-// Model Cadastro
-const cadastroSchema = new mongoose.Schema({
+// Model Usuário
+const usuarioSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   email: { type: String, required: true },
   endereco: { type: String, required: true },
@@ -35,7 +39,7 @@ const cadastroSchema = new mongoose.Schema({
   cep: { type: String, required: true },
   uf: { type: String, required: true },
 });
-const Cadastro = mongoose.model("Cadastro", cadastroSchema);
+const Usuario = mongoose.model("Usuário", usuarioSchema);
 
 // Roteamento Inscrição
 app.post("/cadastroInscricao", async (req, res) => {
@@ -44,14 +48,14 @@ app.post("/cadastroInscricao", async (req, res) => {
   if (email == null) {
     return res.status(400).json({ error: "Preencha o campo" });
   }
-  const emailExiste = await Inscrição.findOne({ email: email });
+  const emailExiste = await Inscricao.findOne({ email: email });
   if (emailExiste) {
     return res
       .status(400)
       .json({ error: "O e-mail digitado já está cadastrado" });
   }
 
-  const inscricao = new Inscrição({
+  const inscricao = new Inscricao({
     email: email,
   });
 
@@ -101,8 +105,8 @@ app.post("/cadastroContato", async (req, res) => {
   }
 });
 
-// Roteamento Cadastro
-app.post("/cadastroCadastro", async (req, res) => {
+// Roteamento Usuário
+app.post("/cadastroUsuario", async (req, res) => {
   const nome = req.body.nome;
   const email = req.body.email;
   const endereco = req.body.endereco;
@@ -122,14 +126,14 @@ app.post("/cadastroCadastro", async (req, res) => {
   ) {
     return res.status(400).json({ error: "Preencha todos os campos" });
   }
-  const emailExiste = await Cadastro.findOne({ email: email });
+  const emailExiste = await Usuario.findOne({ email: email });
   if (emailExiste) {
     return res
       .status(400)
       .json({ error: "O e-mail digitado já está cadastrado" });
   }
 
-  const cadastro = new Cadastro({
+  const usuario = new Usuario({
     nome: nome,
     email: email,
     endereco: endereco,
@@ -140,11 +144,11 @@ app.post("/cadastroCadastro", async (req, res) => {
   });
 
   try {
-    const newCadastro = await cadastro.save();
+    const newUsuario = await usuario.save();
     res.json({
       error: null,
       msg: "Cadastro feito com sucesso",
-      cadastroId: newCadastro._id,
+      usluarioId: newUsuario._id,
     });
   } catch (error) {
     res.status(400).json({ error });
@@ -152,18 +156,18 @@ app.post("/cadastroCadastro", async (req, res) => {
 });
 
 // Rota para o get de Inscrição
-app.get("/cadastroInscricao", async (req, res) => {
+app.get("/", async (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
 // Rota para o get de Contato
-app.get("/cadastroContato", async (req, res) => {
-  res.sendFile(__dirname + "/pages/contatos.html");
+app.get("/contatos", async (req, res) => {
+  res.sendFile(__dirname + "./contatos.html");
 });
 
 // Rota para o get de Cadastro
-app.get("/cadastroCadastro", async (req, res) => {
-  res.sendFile(__dirname + "/pages/cadastro.html");
+app.get("/cadastro", async (req, res) => {
+  res.sendFile(__dirname + "./cadastro.html");
 });
 
 // Rota raiz

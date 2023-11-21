@@ -15,87 +15,8 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="../icons/Fauna Guard.png" />
-
-    <!-- ---------------------------------- CSS ---------------------------------- -->
-    <style>
-      /* ----------------- Nativos ----------------- */
-
-      header {
-        background-color: #157146;
-        padding: 0.75%;
-        margin-bottom: 2%;
-      }
-
-      img {
-        border-radius: 5px;
-      }
-
-      /* ----------------- Classes ----------------- */
-
-      .bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navbar-links {
-        display: flex;
-        justify-content: space-evenly;
-        width: 40%;
-      }
-
-      .navbar-link {
-        text-decoration: none;
-        font-size: 18px;
-        color: white;
-      }
-
-      .historia {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-
-      .topicos {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-      }
-
-      .button {
-        background: #157146;
-        color: white;
-        border: none;
-        height: 40px;
-        border-radius: 5px;
-        padding: 8px;
-      }
-
-      .contatos {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding-top: 5%;
-      }
-
-      .links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 5% 0px;
-      }
-
-      .blocoLink {
-        display: flex;
-        flex-direction: column;
-      }
-
-      #linkEmail {
-        padding: 7.5px;
-        width: 275px;
-      }
-    </style>
+    <link rel="icon" href="../icons/FaunaGuard.png" />
+    <link rel="stylesheet" href="../css/historia.css" />
   </head>
   <body>
     <!-- ---------------------------------- Libras ---------------------------------- -->
@@ -116,13 +37,21 @@
     <header>
       <div class="container bar">
         <a href="/">
-          <img src="images/FaunaGuard.png" alt="Logo Fauna Guard" width="60%" />
+          <img
+            src="../images/FaunaGuard.png"
+            alt="Logo Fauna Guard"
+            width="60%"
+          />
         </a>
+        <span></span>
+        <span></span>
+        <span></span>
         <div class="navbar-links">
-          <a href="/historia" class="navbar-link">Nossa História</a>
-          <a href="/time" class="navbar-link">Nosso Time</a>
-          <a href="/contatos" class="navbar-link">Contatos</a>
+          <a href="historia.html" class="navbar-link">Nossa História</a>
+          <a href="time.html" class="navbar-link">Nosso Time</a>
+          <a href="contatos.html" class="navbar-link">Contatos</a>
         </div>
+        <a href="cadastro.html" class="navbar-link">Cadastrar</a>
       </div>
     </header>
 
@@ -189,12 +118,12 @@
       <div class="links">
         <div class="blocoLink">
           <h2>Sobre Nós</h2>
-          <a href="historia.html">Nossa história</a>
-          <a href="time.html">Nosso time</a>
+          <a href="pages/historia.html">Nossa história</a>
+          <a href="pages/time.html">Nosso time</a>
         </div>
         <div class="blocoLink">
           <h2>Empresa</h2>
-          <a href="contatos.html">Contatos</a>
+          <a href="pages/contatos.html">Contatos</a>
         </div>
         <div class="blocoLink">
           <h2>Parcerias</h2>
@@ -205,8 +134,13 @@
         </div>
         <div class="blocoLink">
           <h2>Inscreva-se</h2>
-          <form class="linkForm" action="/cadastroinscricao" method="post">
-            <input type="email" placeholder="Insira um E-mail" id="linkEmail" />
+          <form class="linkForm" action="/cadastroInscricao" method="post">
+            <input
+              type="email"
+              placeholder="Insira um E-mail"
+              id="linkEmail"
+              name="email"
+            />
             <input type="submit" class="button" value="Inscrever" />
           </form>
         </div>
